@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product management website</title>
+        <script>
+            function addTextField(values){
+                var element = document.getElementById('new');
+                if(values == "Add" || values == "Update")
+                //3 text field
+                {element.innerHTML = `<form action="submit.php" method="POST">
+      PID: <input type="text" name="pid" id="pid" /> <br />
+      <br />
+      PName: <input type="text" name="pname" id="pname" /> <br />
+      <br />
+      PValue: <input type="text" name="pvalue" id="pvalue" /> <br />
+      <br /><input type="submit" name="button1" class="button" value="add" />
+
+<input type="submit" name="button2" class="button" value="update" />
+
+<input type="submit" name="button3" class="button" value="delete" />
+
+<input type="submit" name="button4" class="button" value="search" />
+
+<input type="submit" name="button5" class="button" value="display" /></form>`;
+                }
+                else
+                //pid
+                {element.innerHTML = `<form action="submit.php" method="POST">
+      ID: <input type="text" name="pid" id="pid" /> <br />
+      <br /><input type="submit" name="button1" class="button" value="add" />
+
+<input type="submit" name="button2" class="button" value="update" />
+
+<input type="submit" name="button3" class="button" value="delete" />
+
+<input type="submit" name="button4" class="button" value="search" />
+
+<input type="submit" name="button5" class="button" value="display" /></form>`;
+                }
+
+
+                // element.innerHTML = `<div><p>Inside js ${values}</p>
+                //     </div>`;
+
+            }
+        </script>
+    </head>
+    <body>
+        <div class="col-lg-6 pl-2">
+            <div class="form-input-div">
+              <select onchange="addTextField(this.value)">
+                <option>Select option</option>
+                <option>Add</option>
+                <option>Update</option>
+                <option>Delete</option>
+                <option>Search</option>
+                <option>Display</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" id="new">
+          
+          </div>
+    </body>
+</html>
